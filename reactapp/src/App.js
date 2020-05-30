@@ -4,7 +4,7 @@ import PokemonSearch from './Components/PokemonSearch';
 import Pokedex from './Components/Pokedex';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import pokemonList from '../reducers/pokemon.reducer';
+import pokemonList from './reducers/pokemon.reducer';
 
 import {Provider} from 'react-redux';
 import {createStore, combineReducers}  from 'redux';

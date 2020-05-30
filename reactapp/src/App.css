@@ -95,7 +95,7 @@ ul {
 
 .btn-search {
   background-color: #FAACA8;
-  background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%); 
+  background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);  
   color: #fff;
   padding: 7px;
   margin-top: 10px;
@@ -103,15 +103,16 @@ ul {
   cursor: pointer;
   border: 1px solid;
   border-radius: 4px;
+  box-shadow: 0 4px #dcdde1;
 }
 
-.btn-search:hover {
-  transform: scale(1.06);
-  -webkit-transition: all 0.8s ease-in-out;
-  -moz-transition: all 0.8s ease-in-out;
-  -o-transition: all 0.8s ease-in-out;
-  -ms-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
+.btn-search:focus {
+  outline: none;
+}
+
+.btn-search:active {
+  box-shadow: 0 2px #dcdde1;
+  transform: translateY(4px);
 }
 
 .pokedex {
@@ -127,6 +128,10 @@ ul {
 
 .pokedex:hover {
   color: #FAACA8;
+}
+
+.pokedex:active {
+  transform: translateY(4px);
 }
 
 .pokedex-icon {
