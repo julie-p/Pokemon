@@ -30,7 +30,7 @@ router.delete('/wishlist-pokemon/:name', async function(req, res, next) {
     result = true;
   };
 
-  res.json({result, pokemonDelete});
+  res.json({result});
 });
 
 router.get('/wishlist-pokemon', async function(req, res, next) {
