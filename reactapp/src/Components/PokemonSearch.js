@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTabletAlt } from "@fortawesome/free-solid-svg-icons";
 
+import { connect } from 'react-redux';
+
 function PokemonSearch() {
     const API = 'https://pokeapi.co/api/v2/pokemon/';
     const directions = 'Search by name or number (1-807)';
@@ -115,4 +117,15 @@ function PokemonSearch() {
     );
 };
 
-export default PokemonSearch;
+function mapDispatchToProps(dispatch) {
+    return {
+        addPokemon : function(pokemon) {
+            dispatch({ type : 'addPokemon', pokemon: pokemon})
+        }
+    }
+};
+
+export default connect(
+    null, 
+    mapDispatchToProps
+)(PokemonSearch);
