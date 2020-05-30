@@ -25,6 +25,7 @@ function PokemonSearch() {
                 default :
                     const reqFind = await fetch(`${API}${item}`); 
                     const jsonResponse = await reqFind.json();
+                    console.log(jsonResponse)
                     setIsActive(true);
                     setName(jsonResponse.name.toUpperCase());
                     setImg(jsonResponse.sprites.front_default);
