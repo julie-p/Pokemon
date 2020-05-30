@@ -7,8 +7,8 @@ router.post('/wishlist-pokemon', async function(req, res, next) {
   const newPokemon = new pokemonModel({
     id: req.body.id,
     name: req.body.name, 
-    img: req.body.img,
-    type: req.body.type
+    sprites: req.body.img,
+    types: req.body.type
   });
 
   const pokemon = await newPokemon.save();

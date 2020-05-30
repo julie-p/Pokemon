@@ -3,7 +3,9 @@ import '../App.css';
 
 import { connect } from 'react-redux';
 
-function Pokedex() {
+function Pokedex(props) {
+
+    console.log(props.myPokemon)
     return(
         <div>
 

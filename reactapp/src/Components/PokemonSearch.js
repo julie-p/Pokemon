@@ -6,7 +6,8 @@ import { faTabletAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { connect } from 'react-redux';
 
-function PokemonSearch() {
+function PokemonSearch(props) {
+
     const API = 'https://pokeapi.co/api/v2/pokemon/';
     const directions = 'Search by name or number (1-807)';
     const example = "example: Vaporeon or 134";
@@ -106,7 +107,7 @@ function PokemonSearch() {
 
             <button 
             className='btn-search'
-            style={{display: isActive ? "block" : "none"}} 
+            style={{display: isActive ? "block" : "none"}}
             >
                 Add to your Pokedex
             </button> 
