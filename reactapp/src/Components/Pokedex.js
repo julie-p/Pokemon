@@ -35,8 +35,8 @@ function Pokedex(props) {
                             </div>
 
                             <div className="body-result">
-                                <h5 className="name-result">NUMBER | NAME</h5>
-                                <p className="type-result">TYPE</p>
+                                <h5 className="name-result"></h5>
+                                <p className="type-result"></p>
                             </div>
                                 
                             
