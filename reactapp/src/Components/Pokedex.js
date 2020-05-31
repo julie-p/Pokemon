@@ -17,7 +17,8 @@ function Pokedex(props) {
         }
         findPokemon();
     }, []);
-    return(
+
+    return (
         <div>
 
             <div className="App">
@@ -25,24 +26,26 @@ function Pokedex(props) {
 
                     <div className="results" >
 
-                    {/* {props.myPokemon.map((pokemon, e) => {
+                    {props.myPokemon.map((pokemon, e) => {
 
-                    return ( */}
+                    return ( 
                         <div className="container">
-
+                            
                             <div className="img-result">
-                            <img />
+                                <img src={pokemon.img} alt="{pokemon.name}"/>
                             </div>
+                            
 
                             <div className="body-result">
-                                <h5 className="name-result"></h5>
-                                <p className="type-result"></p>
+                                <h5 className="name-result" style={{color:'#000'}}>{pokemon.id} | {pokemon.name.toUpperCase()}</h5>
+                                <p className="type-result">{pokemon.type}</p>
+                                
                             </div>
                                 
                             
                             
                         </div>
-                    {/* )})} */}
+                    )})} 
 
                     </div>
                     
