@@ -22,7 +22,12 @@ function Pokedex(props) {
         <div>
 
             <div className="App">
+
                 <div className="Pokemon">
+
+                    <h1 className="title" style={{marginBottom: 20}}>
+                    Your Pokedex
+                    </h1>
 
                     <div className="results" >
 
@@ -30,15 +35,17 @@ function Pokedex(props) {
 
                     return ( 
                         <div className="container">
+                        
+                            <img src={pokemon.img} alt="{pokemon.name}"/>
                             
-                            <div className="img-result">
-                                <img src={pokemon.img} alt="{pokemon.name}"/>
-                            </div>
-                            
-
                             <div className="body-result">
-                                <h5 className="name-result" style={{color:'#000'}}>{pokemon.id} | {pokemon.name.toUpperCase()}</h5>
-                                <p className="type-result">{pokemon.type}</p>
+                                <div className="name-result">
+                                    <h5 style={{color:'#000'}}>{pokemon.id} | {pokemon.name.toUpperCase()}</h5>
+                                </div>
+
+                                <div className="type-result">
+                                    <p>{pokemon.type}</p>
+                                </div>
                                 
                             </div>
                                 
