@@ -103,7 +103,7 @@ ul {
   cursor: pointer;
   border: 1px solid;
   border-radius: 4px;
-  box-shadow: 0 4px #dcdde1;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.04);
 }
 
 .btn-search:focus {
@@ -111,7 +111,7 @@ ul {
 }
 
 .btn-search:active {
-  box-shadow: 0 2px #dcdde1;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.04);
   transform: translateY(4px);
 }
 

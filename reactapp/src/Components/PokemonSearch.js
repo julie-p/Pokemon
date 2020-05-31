@@ -13,6 +13,7 @@ function PokemonSearch(props) {
     const example = "example: Vaporeon or 134";
 
     const [ item, setItem ] = useState();
+    const [ pokemon, setPokemon ] = useState([]);
     const [ name, setName ] = useState('');
     const [ img, setImg ] = useState(null);
     const [ abilities, setAbilities ] = useState([]);
@@ -28,7 +29,8 @@ function PokemonSearch(props) {
                 default :
                     const reqFind = await fetch(`${API}${item}`); 
                     const jsonResponse = await reqFind.json();
-                    console.log(jsonResponse)
+                    console.log(jsonResponse);
+                    setPokemon(jsonResponse);
                     setIsActive(true);
                     setName(jsonResponse.name.toUpperCase());
                     setImg(jsonResponse.sprites.front_default);
@@ -44,6 +46,17 @@ function PokemonSearch(props) {
         setAbilities([]);
         setIsActive(false);
         setInput(input+1);
+    };
+
+    const addToPokedex = async pokemon => {
+
+        props.addPokemon(pokemon);
+
+        const saveResponse = await fetch('/wishlist-pokemon', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: `name=${pokemon.name}&id=${pokemon.id}&img=${pokemon.sprites}&type=${pokemon.types}`
+        })
     };
     
     return (
@@ -108,6 +121,7 @@ function PokemonSearch(props) {
             <button 
             className='btn-search'
             style={{display: isActive ? "block" : "none"}}
+            onClick={() => addToPokedex(pokemon)}
             >
                 Add to your Pokedex
             </button> 

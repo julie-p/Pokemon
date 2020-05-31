@@ -5,10 +5,10 @@ var pokemonModel = require('../Models/PokemonModel');
 router.post('/wishlist-pokemon', async function(req, res, next) {
 
   const newPokemon = new pokemonModel({
-    id: req.body.id,
+    /* id: req.body.id, */
     name: req.body.name, 
-    sprites: req.body.img,
-    types: req.body.type
+    sprites: req.body.sprites,
+    types: req.body.types
   });
 
   const pokemon = await newPokemon.save();

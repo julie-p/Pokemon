@@ -14,12 +14,14 @@ function App() {
   return (
 
   <Provider store={store}>
+
     <Router>
       <Switch>
       <Route path='/' exact component={PokemonSearch}/>
       <Route path='/pokedex' exact component={Pokedex}/>
       </Switch>
     </Router>
+    
   </Provider>
   );
 };
