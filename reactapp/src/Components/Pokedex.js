@@ -5,15 +5,17 @@ import { connect } from 'react-redux';
 
 function Pokedex(props) {
 
-   console.log('-------------------------------PROPS', props.myPokemon);
+//    console.log('-------------------------------PROPS', props.myPokemon);
+
+/* Modif du 17 juin : name OK, trouver solution pour img & types */
 
    useEffect(() => {
 
     const findPokemon = async() => {
         const response = await fetch(`/wishlist-pokemon?pokemon=${props.myPokemon}`);
         const jsonResponse = await response.json();
-        /* console.log('--------JSON', jsonResponse); */
-        props.savePokemon(jsonResponse);
+           console.log(jsonResponse);
+           props.savePokemon(jsonResponse.pokemon);
     }
     findPokemon();
 }, []);
@@ -36,7 +38,7 @@ function Pokedex(props) {
                     return ( 
                         <div className="container">
                         
-                            <img src={pokemon.sprites.front_default} alt="{pokemon.name}"/>
+                            <img src={pokemon.img} alt="{pokemon.name}"/>
                             
                             <div className="body-result">
                                 <div className="name-result">

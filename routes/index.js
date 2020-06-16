@@ -30,14 +30,14 @@ router.delete('/wishlist-pokemon/:name', async function(req, res, next) {
     result = true;
   };
 
-  res.json({result});
+  res.json({result}); 
 });
 
 router.get('/wishlist-pokemon', async function(req, res, next) {
 
   const pokemon = await pokemonModel.find();
 
-  res.json(pokemon);
+  res.json({pokemon});
 });
 
 module.exports = router;

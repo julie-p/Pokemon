@@ -6,7 +6,7 @@ var options = {
     useUnifiedTopology: true
 };
 
-mongoose.connect('mongodb+srv://admin:Qopqe5J2ale5mAzo@cluster0-nxhjj.mongodb.net/pokemon-retry?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://admin:U4gDUPZMZHM4je3o@cluster0-nxhjj.mongodb.net/pokemon-retry?retryWrites=true&w=majority',
     options,
     function(err) {
         console.log(err)
