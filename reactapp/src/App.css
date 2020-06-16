@@ -2,7 +2,7 @@
   background: #F0F8FF;
   color: #fff;
   font-family: 'Merriweather', serif;
-  border: 2px solid #fff;
+  border: 1px dotted lightgrey;
   padding: 40px 20px 40px 20px;
   border-radius: 2%;
   box-shadow:
@@ -20,7 +20,7 @@
   width: 320px;
 }
 .title {
-  /* color: #fad390; */
+  color: #fad390; 
   background-image: -webkit-linear-gradient(left, pink , #fad390);
   background-clip: text;
   -webkit-background-clip: text;
@@ -78,7 +78,6 @@ input:focus {
 
 .abilities {
   text-align: left;
-  /* font-family: 'Raleway', sans-serif; */
   font-size: 16px;
 }
 
@@ -120,15 +119,11 @@ ul {
   display: flex;
   flex-direction: column;
   text-align: left;
-  color: #000;
+  color: #FAACA8;
   text-decoration: none;
   padding-left: 0;
   font-size: 14px;
   margin-bottom: 30px;
-}
-
-.pokedex:hover {
-  color: #FAACA8;
 }
 
 .pokedex:active {
@@ -155,4 +150,8 @@ ul {
   justify-content: space-between;
   text-align: left;
   line-height: 0;
+}
+
+.type-result p {
+  color: #576574;
 }

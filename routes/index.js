@@ -7,8 +7,8 @@ router.post('/wishlist-pokemon', async function(req, res, next) {
   const newPokemon = new pokemonModel({
     id: req.body.id,
     name: req.body.name, 
-    sprites: req.body.sprites,
-    types: req.body.types
+    img: req.body.img,
+    type: req.body.type
   });
 
   const pokemon = await newPokemon.save();
@@ -37,7 +37,7 @@ router.get('/wishlist-pokemon', async function(req, res, next) {
 
   const pokemon = await pokemonModel.find();
 
-  res.json({pokemon});
+  res.json(pokemon);
 });
 
 module.exports = router;

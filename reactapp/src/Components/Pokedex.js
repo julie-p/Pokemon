@@ -5,18 +5,18 @@ import { connect } from 'react-redux';
 
 function Pokedex(props) {
 
-   console.log(props.myPokemon); 
+   console.log('-------------------------------PROPS', props.myPokemon);
 
-    useEffect(() => {
+   useEffect(() => {
 
-        const findPokemon = async() => {
-            const response = await fetch(`/wishlist-pokemon?pokemon=${props.myPokemon}`);
-            const jsonResponse = await response.json();
-            /* console.log(jsonResponse); */
-            props.savePokemon(jsonResponse.pokemon);
-        }
-        findPokemon();
-    }, []);
+    const findPokemon = async() => {
+        const response = await fetch(`/wishlist-pokemon?pokemon=${props.myPokemon}`);
+        const jsonResponse = await response.json();
+        /* console.log('--------JSON', jsonResponse); */
+        props.savePokemon(jsonResponse);
+    }
+    findPokemon();
+}, []);
 
     return (
         <div>
@@ -36,7 +36,7 @@ function Pokedex(props) {
                     return ( 
                         <div className="container">
                         
-                            <img src={pokemon.img} alt="{pokemon.name}"/>
+                            <img src={pokemon.sprites.front_default} alt="{pokemon.name}"/>
                             
                             <div className="body-result">
                                 <div className="name-result">
@@ -44,7 +44,7 @@ function Pokedex(props) {
                                 </div>
 
                                 <div className="type-result">
-                                    <p>{pokemon.type}</p>
+                                    <p>{pokemon.types}</p>
                                 </div>
                                 
                             </div>

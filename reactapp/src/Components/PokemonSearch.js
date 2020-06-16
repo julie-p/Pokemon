@@ -29,16 +29,16 @@ function PokemonSearch(props) {
                 default :
                     const reqFind = await fetch(`${API}${item}`); 
                     const jsonResponse = await reqFind.json();
-                    console.log(jsonResponse);
+                    console.log('---------RESPONSE', jsonResponse);
                     setPokemon(jsonResponse);
                     setIsActive(true);
                     setName(jsonResponse.name.toUpperCase());
                     setImg(jsonResponse.sprites.front_default);
                     setAbilities(jsonResponse.abilities);
-            }
+            }    
         };           
         findPokemon();
-    }, [item]);
+    }, [item, img]);
 
     function restart() {
         setName('');
@@ -55,7 +55,7 @@ function PokemonSearch(props) {
         const saveResponse = await fetch('/wishlist-pokemon', {
             method: 'POST',
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            body: `name=${pokemon.name}&id=${pokemon.id}&img=${pokemon.sprites}&type=${pokemon.types}`
+            body: `name=${pokemon.name}&id=${pokemon.id}&img=${pokemon.img}&type=${pokemon.type}`
         })
     };
     
@@ -113,6 +113,7 @@ function PokemonSearch(props) {
                 return <li>{e?.ability?.name}</li>
                 })}
                 </ul>
+                
 
             </div>
 

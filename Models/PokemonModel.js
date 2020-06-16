@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 var pokemonSchema = mongoose.Schema({
     id: Number,
     name: String,
-    sprites: [String],
-    types: [String]
+    img: String,
+    type: String
 }); 
 
 var pokemonModel = mongoose.model('pokemon', pokemonSchema);
